@@ -15,8 +15,8 @@ source("lib/Likelihood_Ab.R")
 # Beginning preparation ##############
 source("main/mod_ab/data_prep.R")
 
-traits_biotic <-  "none"
-llparam <- "both"
+traits_biotic <-  c("none", "Height", "SLA", "2tr")[1] 
+llparam <- c("none","phi_param" ,"beta_conv","both")[1]
 source("main/mod_ab/priors.R")
 
 if (traits_biotic == 'Height'){
