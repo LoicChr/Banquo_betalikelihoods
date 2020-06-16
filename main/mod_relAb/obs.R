@@ -38,5 +38,3 @@ settings <- list(iterations = 15000*3, nrChains = 1)
 # P_S_E_tr <- matrix(1/15, ncol = 15, nrow = 93) # To try H0
 
 out <- runMCMC(bayesianSetup = bayesianSetup, settings = settings)
-
-save(list = ls(), file = paste0(result_file, "/obs_chain", id, ".Rdata"))
