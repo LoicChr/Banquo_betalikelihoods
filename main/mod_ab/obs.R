@@ -34,12 +34,8 @@ prior <- createPrior(density = density, sampler = sampler, lower = bounds[,1], u
 bayesianSetup <- createBayesianSetup(likelihoodAb, prior, names = list_params)
 # # settings for the sampler
 settings <- list(iterations = 15000*3, nrChains = 1)
+# P_S_E_tr <- matrix(1/15, ncol = 15, nrow = 93) # To try H0
 
 out <- runMCMC(bayesianSetup = bayesianSetup, settings = settings)
-save(list = ls(), file = paste0(result_file, "/obs_chain", id, ".Rdata"))
 
-## llparam : none ; -1901 vs. -1826.98
-## llparam : phi_param ; -1864.532 vs. -1829.378
-## llparam : beta_conv ; -1766.469  vs. -1765.748
-## llparam : both ; -1728 vs. -1767.189
 
