@@ -7,7 +7,7 @@ In their respective folder, there is a data preparation script data_prep.R and a
 
 The likelihood functions are in Likelihood_Ab.R (abundance model) and Likelihood_relAb.R (relative abundance model). These two scripts contains first the core likelihood function itself and a function wrapped around it that can call Banquo to modify species covers.
 
-Each model comes with a serie of options to calculate the mean cover: 
+Each model comes with a serie of options to calculate the mean cover: \n
 (1) "none" - Traitspace model (no modif of the traitspace object stored in data).
 (2) "Height" - Banquo model using height
 (3) "SLA" - Banquo model using SLA
