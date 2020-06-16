@@ -15,8 +15,8 @@ source("lib/Likelihood_relAb.R")
 # Beginning preparation ##############
 source("main/mod_relAb/data_prep.R")
 
-llparam <-"beta_conv"
-traits_biotic <-  "none"
+traits_biotic <-  c("none", "Height", "SLA", "2tr")[1] 
+llparam <- c("none","beta_conv")[1]
 
 source("main/mod_relAb/priors.R")
 
@@ -35,8 +35,8 @@ prior <- createPrior(density = density, sampler = sampler, lower = bounds[,1], u
 bayesianSetup <- createBayesianSetup(likelihoodRelAb, prior, names = list_params)
 # # settings for the sampler
 settings <- list(iterations = 15000*3, nrChains = 1)
-# P_S_E_tr <- matrix(1/15, ncol = 15, nrow = 93)
+# P_S_E_tr <- matrix(1/15, ncol = 15, nrow = 93) # To try H0
 
-out2 <- runMCMC(bayesianSetup = bayesianSetup, settings = settings)
+out <- runMCMC(bayesianSetup = bayesianSetup, settings = settings)
 
 save(list = ls(), file = paste0(result_file, "/obs_chain", id, ".Rdata"))
